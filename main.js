@@ -12,7 +12,7 @@ function sendiData(){
 
 	if ((SteamId == '') && (SteamName != '')){
 
-		tg.sendData(`{"check_aspect" : {"SteamId": '', "SteamName" : "${SteamName}}"}`); 
+		tg.sendData(`{"check_aspect" : {"SteamId": '', "SteamName" : "${SteamName}"}}`); 
 	}		
 	if ((SteamId != '') && (SteamName == '')){
 
