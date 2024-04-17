@@ -19,7 +19,7 @@ function sendiData(){
     	}
 
 	}else{
-		tg.sendData(`SteamId #${SteamId} SteamName #${SteamName}`); 
+		tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ${SteamName}}}`); 
 	};
 
 
