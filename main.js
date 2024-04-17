@@ -12,11 +12,11 @@ function sendiData(){
 
 	if ((SteamId == '') && (SteamName != '')){
 
-		tg.sendData(`{"check_aspect" : {"SteamId": '', "SteamName" : ${SteamName}}}`); 
+		tg.sendData(`{"check_aspect" : {"SteamId": '', "SteamName" : "${SteamName}}"}`); 
 	}		
 	if ((SteamId != '') && (SteamName == '')){
 
-		tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ''}}`); 
+		tg.sendData(`{"check_aspect" : {"SteamId": "${SteamId}", "SteamName" : ''}}`); 
 	}
 	if ((SteamId == '') && (SteamName == '')) {
 		textOr.innerHTML = 'Заполни хотя бы одно поле ';
@@ -27,7 +27,7 @@ function sendiData(){
 	}
 
 	if ((SteamId != '') && (SteamName != '')){
-		tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ${SteamName}}}`); 
+		tg.sendData(`{"check_aspect" : {"SteamId": "${SteamId}", "SteamName" : "${SteamName}}"}`); 
 	}	
 
 };
