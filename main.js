@@ -9,19 +9,24 @@ function sendiData(){
 	let SteamId = document.getElementById('SteamId').value;
 	let SteamName = document.getElementById('SteamName').value;
 	let textOr = document.querySelector('.textOR');
-	if ((SteamId == '') && (SteamName == '')) {
-		textOr.innerHTML = 'Заполни хотя бы одно поле ';
-		textOr.style.color = 'red';
-		 
+		if ((SteamId == '') && (SteamName == '')) {
+			textOr.innerHTML = 'Заполни хотя бы одно поле ';
+			textOr.style.color = 'red';
+			 
 
-    	for(var i = 0; i < steamIn.length; i++){
-        	steamIn[i].style.border = '5px solid red';
-    	}
+	    	for(var i = 0; i < steamIn.length; i++){
+	        	steamIn[i].style.border = '5px solid red';
+	    }
+		if (SteamId == ''){
 
-	}else{
-		tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ${SteamName}}}`); 
-	};
+			tg.sendData(`{"check_aspect" : {"SteamId": '', "SteamName" : ${SteamName}}}`); 
+		}		
+		if (SteamName == ''){
 
+			tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ''}}`); 
 
-	
+		}else{
+			tg.sendData(`{"check_aspect" : {"SteamId": ${SteamId}, "SteamName" : ${SteamName}}}`); 
+		}
+		};	
 }
